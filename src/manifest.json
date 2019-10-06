@@ -1,7 +1,7 @@
 {
-  "name": "Page Modeller",
-  "short_name": "PageModeller",
-  "description": "Browser DevTools extension for modelling web pages for automation.",
+  "name": "Page Modeller Test",
+  "short_name": "PageModellerTest",
+  "description": "Browser DevTools extension for modelling web pages for AUTOMATION.",
   "version": "1.5.2",
   "version_name": "1.5.2",
   "manifest_version": 2,
@@ -11,7 +11,7 @@
     "128": "icons/icon_128.png"
   },
   "browser_action": {
-    "default_title": "Page Modeller",
+    "default_title": "Page Modeller Test",
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon_16_grey.png",
