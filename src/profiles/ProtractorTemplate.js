@@ -10,9 +10,13 @@ const getSelectedLocator = entity => entity.locators.find(l => l.selected);
 const renderGetElement = entity => {
   const locator = getSelectedLocator(entity);
   return `
- this.get${entity.name}Element = function() {
-   return element(by.${locator.name}('${locator.locator}'));
- }  
+ ['${entity.name}',{
+   'locator': {
+                "locatorType":"${locator.name},
+                "value":"${locator.locator}
+   }
+  }
+], 
 `;
 };
 

@@ -106,6 +106,9 @@ const config = {
       }),
     ],
   },
+  node: {
+    fs: 'empty',
+  },
 };
 
 if (config.mode === 'production') {
