@@ -12,8 +12,8 @@ const renderGetElement = entity => {
   return `
  ['${entity.name}',{
    'locator': {
-                "locatorType":"${locator.name},
-                "value":"${locator.locator}
+                "locatorType":"${locator.name}",
+                "value":"${locator.locator}"
    }
   }
 ], 
