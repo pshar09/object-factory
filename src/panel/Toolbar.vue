@@ -1,16 +1,23 @@
 <template>
   <v-toolbar dense fixed>
+    <v-tooltip bottom :disabled="!showTooltips || isScanning" open-delay="600">
+      <v-btn slot="activator" :disabled="isScanning" icon v-on:click="add" v-bind:class="{ active: isAdding }"> <v-icon>playlist_add</v-icon> </v-btn>
+      <span v-if="!isInspecting">Add Single Element</span> <span v-if="isAdding">Stop Adding Element</span>
+    </v-tooltip>
+
     <v-tooltip bottom :disabled="!showTooltips || hasModel || isAdding" open-delay="600">
       <v-btn slot="activator" ref="btn-scan" id="btn-scan" icon :disabled="hasModel || isAdding" v-on:click="scan" v-bind:class="{ active: isScanning }">
         <v-icon>find_in_page</v-icon>
       </v-btn>
-      <span v-if="!isInspecting">Scan Page</span> <span v-if="isScanning">Stop Scanning</span>
+      <span v-if="!isInspecting">Scan Page/ Page Area</span> <span v-if="isScanning">Stop Scanning</span>
     </v-tooltip>
 
-    <v-tooltip bottom :disabled="!showTooltips || !hasModel || isInspecting" open-delay="600">
-      <v-btn slot="activator" icon :disabled="!hasModel || isInspecting" v-on:click="deleteModel"> <v-icon>delete_sweep</v-icon> </v-btn>
-      <span>Delete Model</span>
+    <v-tooltip bottom :disabled="!showTooltips || (!hasModel && !isInspecting)" open-delay="600">
+      <v-btn slot="activator" icon :disabled="!hasModel || isInspecting" v-on:click="generateModel"> <v-icon>code</v-icon> </v-btn>
+      <span>Generate Object Model</span>
     </v-tooltip>
+
+    <v-spacer></v-spacer>
 
     <v-tooltip bottom :disabled="!showTooltips || hasModel || isInspecting" open-delay="600">
       <v-menu :nudge-width="100" slot="activator" :disabled="hasModel || isInspecting">
@@ -25,16 +32,9 @@
       <span>Select Modelling Profile</span>
     </v-tooltip>
 
-    <v-spacer></v-spacer>
-
-    <v-tooltip bottom :disabled="!showTooltips || isScanning" open-delay="600">
-      <v-btn slot="activator" :disabled="isScanning" icon v-on:click="add" v-bind:class="{ active: isAdding }"> <v-icon>playlist_add</v-icon> </v-btn>
-      <span v-if="!isInspecting">Add Element</span> <span v-if="isAdding">Stop Adding Element</span>
-    </v-tooltip>
-
-    <v-tooltip bottom :disabled="!showTooltips || (!hasModel && !isInspecting)" open-delay="600">
-      <v-btn slot="activator" icon :disabled="!hasModel || isInspecting" v-on:click="generateModel"> <v-icon>code</v-icon> </v-btn>
-      <span>Generate Code</span>
+    <v-tooltip bottom :disabled="!showTooltips || !hasModel || isInspecting" open-delay="600">
+      <v-btn slot="activator" icon :disabled="!hasModel || isInspecting" v-on:click="deleteModel"> <v-icon>delete_sweep</v-icon> </v-btn>
+      <span>Delete Model</span>
     </v-tooltip>
   </v-toolbar>
 </template>

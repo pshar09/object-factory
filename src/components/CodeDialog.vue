@@ -50,29 +50,48 @@ export default {
       this.$root.$popupSuccess('The code has been copied to your clipboard');
     },
     saveJS() {
-      var filename = prompt('Please enter your file name');
+      const filename = prompt('Please enter your file name without extension');
       if (filename) {
-        const FileSaver = require('file-saver');
-        var blob = new Blob([this.code], { type: 'text/plain;charset=utf-8' });
-        FileSaver.saveAs(blob, filename + '.js');
-        document.body.removeChild(copyEl);
-        this.dialog = false;
-        this.$root.$popupSuccess('The code has been saved to your local storage');
-        alert('File saved successfully...');
+        if (filename.match(/[^\w]|_/) == null) {
+          const FileSaver = require('file-saver');
+          const importJSPackage_IComponentValidations = "import {IComponentValidations} from '\@wmclientonline\/e2e-utils';";
+          const exportVariable = 'export var ' + filename + ': Map<string, IComponentValidations> = new Map<string, IComponentValidations>([';
+          const newLineJS = '\r\n';
+          const contentToWriteInJS = importJSPackage_IComponentValidations + newLineJS + exportVariable + newLineJS + newLineJS + this.code + newLineJS + ']);';
+
+          var blob = new Blob([contentToWriteInJS], { type: 'text/plain;charset=utf-8' });
+          FileSaver.saveAs(blob, filename + '.js');
+          document.body.removeChild(copyEl);
+          this.dialog = false;
+          this.$root.$popupSuccess('The code has been saved to your local storage');
+          alert('File saved successfully...');
+        } else {
+          alert('Invalid File Name entered...!!!');
+        }
       } else {
         alert('File save canceled...');
       }
     },
     saveJava() {
-      var filename = prompt('Please enter your file name');
+      const filename = prompt('Please enter your file name without extension');
       if (filename) {
-        const FileSaver = require('file-saver');
-        var blob = new Blob([this.code], { type: 'text/plain;charset=utf-8' });
-        FileSaver.saveAs(blob, filename + '.java');
-        document.body.removeChild(copyEl);
-        this.dialog = false;
-        this.$root.$popupSuccess('The code has been saved to your local storage');
-        alert('File saved successfully...');
+        if (filename.match(/[^\w]|_/) == null) {
+          const FileSaver = require('file-saver');
+
+          const packageName = 'package com.ms.pages;';
+          const importSeleniumPackage_By = 'import org.openqa.selenium.By;';
+          const newLine = '\r\n';
+          const contentToWrite = packageName + newLine + importSeleniumPackage_By + newLine + newLine + 'public class ' + filename + '{' + this.code + newLine + '}';
+
+          var blob = new Blob([contentToWrite], { type: 'text/plain;charset=utf-8' });
+          FileSaver.saveAs(blob, filename + '.java');
+          document.body.removeChild(copyEl);
+          this.dialog = false;
+          this.$root.$popupSuccess('The code has been saved to your local storage');
+          alert('File saved successfully...');
+        } else {
+          alert('Invalid File Name entered...!!!');
+        }
       } else {
         alert('File save canceled...');
       }

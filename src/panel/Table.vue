@@ -72,7 +72,7 @@
         </tr>
       </template>
       <template slot="no-data">
-        <td colspan="3">Scan the page or start adding elements to build the model</td>
+        <td colspan="3">Add Single Elements to the Object Model OR Scan the Page/ Page Area to identify the Page Objects</td>
       </template>
     </v-data-table>
   </div>

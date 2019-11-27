@@ -1,7 +1,7 @@
 import SeleniumWebDriverJavaTemplate from './SeleniumWebDriverJavaTemplate';
-import SeleniumWebDriverCSharpTemplate from './SeleniumWebDriverCSharpTemplate';
+/* import SeleniumWebDriverCSharpTemplate from './SeleniumWebDriverCSharpTemplate';
 import RobotFrameworkTemplate from './RobotFrameworkTemplate';
-import PuppeteerTemplate from './PuppeteerTemplate';
+import PuppeteerTemplate from './PuppeteerTemplate'; */
 import ProtractorTemplate from './ProtractorTemplate';
 
 export default [
@@ -10,7 +10,7 @@ export default [
     template: SeleniumWebDriverJavaTemplate,
     locators: ['id', 'linkText', 'partialLinkText', 'name', 'css', 'xpath', 'className', 'tagName'],
   },
-  {
+/*   {
     name: 'Selenium WebDriver C#',
     template: SeleniumWebDriverCSharpTemplate,
     locators: ['id', 'linkText', 'partialLinkText', 'name', 'css', 'xpath', 'className', 'tagName'],
@@ -24,7 +24,7 @@ export default [
     name: 'Puppeteer',
     template: PuppeteerTemplate,
     locators: ['css', 'xpath'],
-  },
+  }, */
   {
     name: 'Protractor',
     template: ProtractorTemplate,

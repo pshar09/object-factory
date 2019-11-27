@@ -14,9 +14,11 @@ const transformLocatorName = locatorName => {
   return locatorName;
 };
 
-const renderFindByLocatorStatement = locator => `driver.findElement(By.${transformLocatorName(locator.name)}("${locator.locator}"));`;
+//const renderFindByLocatorStatement = locator => `driver.findElement(By.${transformLocatorName(locator.name)}("${locator.locator}"));`;
 
-const renderGetElementMethod = entity => {
+const renderFindByLocatorStatement = locator => `By.${transformLocatorName(locator.name)}("${locator.locator}");`;
+
+/* const renderGetElementMethod = entity => {
   let output = `
  public WebElement get${entity.name}Element() {
      return ${renderFindByLocatorStatement(entity.locators.find(l => l.selected))}
@@ -30,9 +32,23 @@ const renderGetElementMethod = entity => {
 `;
   }
   return output;
+}; */
+
+const renderGetElementMethod = entity => {
+  let output = `
+ public By get${entity.name}Element = ${renderFindByLocatorStatement(entity.locators.find(l => l.selected))};
+ `;
+  if (entity.tagName === 'SELECT') {
+    output += `
+    public By get${entity.name}Select = new Select(get${entity.name}Element);
+ }
+`;
+  }
+  return output;
 };
 
-const renderClickMethod = entity => {
+
+/* const renderClickMethod = entity => {
   if (isClickable(entity)) {
     return ` 
  public void click${entity.name}() {
@@ -111,4 +127,9 @@ const renderGetTextMethod = entity => {
 export default model =>
   model.entities
     .map(entity => `${renderEntityComment(entity)}${renderGetElementMethod(entity)}${renderClickMethod(entity)}${renderGetAndSetMethods(entity)}${renderGetTextMethod(entity)}`)
+    .join(''); */
+
+  export default model =>
+  model.entities
+    .map(entity => `${renderEntityComment(entity)}${renderGetElementMethod(entity)}`)
     .join('');
