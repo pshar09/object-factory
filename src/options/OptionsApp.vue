@@ -2,7 +2,7 @@
   <v-app :dark="darkMode">
     <v-card>
       <v-card-title primary-title>
-        <h1 class="header-title"><img src="icons/icon_32.png" width="24" /> Page Modeller Options</h1>
+        <h1 class="header-title"><img src="icons/icon_32.png" width="24" /> Object Factory Options</h1>
       </v-card-title>
       <v-card-text>
         <v-form>
