@@ -1,9 +1,9 @@
 const handlePanelShown = () => {
-  console.log('Page Modeller panel shown');
+  console.log('Object Factory panel shown');
 };
 
 const handlePanelHidden = () => {
-  console.log('Page Modeller panel hidden');
+  console.log('Object Factory panel hidden');
 };
 
 chrome.devtools.panels.create('Object Factory', 'icons/icon_32.png', 'panel/panel.html', newPanel => {
