@@ -1,8 +1,8 @@
-# ![Page Modeller](src/icons/icon_32.png) Page Modeller
+# ![Object Factory](src/icons/icon_32.png) Object Factory
 
 > Browser DevTools extension for modelling web pages for automation.
 
-The Page Modeller extension enables developers to scan a web page and generate page object style code for various tools, languages and frameworks and test the UI locators in the browser.
+The Object Factory extension enables developers to scan a web page and generate page object style code for various tools, languages and frameworks and test the UI locators in the browser.
 
 Current release: **1.5.2**
 
@@ -16,13 +16,13 @@ Supported tools and languages are:
 
 ## Contents
 
-- [Browser Support](https://github.com/danhumphrey/page-modeller#browser-support)
-- [Installation](https://github.com/danhumphrey/page-modeller#installation)
-- [Usage](https://github.com/danhumphrey/page-modeller#usage)
-- [Options](https://github.com/danhumphrey/page-modeller#options)
-- [Screenshots](https://github.com/danhumphrey/page-modeller#screenshots)
-- [Contribute](https://github.com/danhumphrey/page-modeller#contribute)
-- [License](https://github.com/danhumphrey/page-modeller#license)
+- [Browser Support](https://github.com/pshar09/object-factory#browser-support)
+- [Installation](https://github.com/pshar09/object-factory#installation)
+- [Usage](https://github.com/pshar09/object-factory#usage)
+- [Options](https://github.com/pshar09/object-factory#options)
+- [Screenshots](https://github.com/pshar09/object-factory#screenshots)
+- [Contribute](https://github.com/pshar09/object-factory#contribute)
+- [License](https://github.com/pshar09/object-factory#license)
 
 ## Browser Support
 
@@ -85,7 +85,7 @@ Options can be configured via the browser extension options.
 
 If you like this extension, please :star: this repository!
 
-Feel free to propose new functionality and additional frameworks here: https://github.com/danhumphrey/page-modeller/issues
+Feel free to propose new functionality and additional frameworks here: https://github.com/pshar09/object-factory/issues
 
 This extension is being actively developed and is considered a beta release.
 
@@ -99,6 +99,6 @@ This extension is being actively developed and is considered a beta release.
 
 ## License
 
-This library is distributed under the MIT license. Please see the [LICENSE](https://github.com/danhumphrey/page-modeller/blob/master/LICENSE) file.
+This library is distributed under the MIT license. Please see the [LICENSE](https://github.com/pshar09/object-factory/blob/master/LICENSE) file.
 
 :point_up_2: I really should call this "licence" as I don't live in the US, but I'm adopting the MIT spelling :wink:
