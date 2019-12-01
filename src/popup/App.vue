@@ -2,8 +2,8 @@
   <v-app>
     <v-card>
       <v-card-text class="body-1 pb-0 pt-2">
-        <h3>Page Modeller {{ version }}</h3>
-        <p>Please open DevTools to use the Page Modeller extension.</p>
+        <h3>Object Factory {{ version }}</h3>
+        <p>Please open DevTools to use the Object Factory extension.</p>
       </v-card-text>
       <v-card-actions class="pt-0">
         <v-spacer></v-spacer>
@@ -26,7 +26,7 @@ export default {
       window.close();
     },
     openSupport() {
-      chrome.tabs.create({ url: 'https://github.com/danhumphrey/page-modeller' });
+      chrome.tabs.create({ url: 'https://github.com/pshar09/object-factory' });
       window.close();
     },
   },
