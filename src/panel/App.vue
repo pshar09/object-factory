@@ -142,7 +142,7 @@ export default {
       chrome.runtime.onMessage.addListener(msg => {
         switch (msg.type) {
           case 'alertMessage':
-            this.$root.$alert(msg.data.title || 'Page Modeller', msg.data.message);
+            this.$root.$alert(msg.data.title || 'Object Factory', msg.data.message);
             return;
           case 'popupInfo':
             this.$root.$popupInfo(msg.data.message);
